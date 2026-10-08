@@ -8,6 +8,8 @@ import pytest
 from resume_builder.resume_exploder import ResumeExploder
 from tests.conftest import test_data_dir
 
+import shutil
+import os
 import filecmp
 from pathlib import Path
 
@@ -38,10 +40,20 @@ class TestResumeExploder:
             pytest.skip("Resume version 1.1.0 is required to explode a resume")
         return ResumeExploder(resume_pth, tmp_path)
 
+    @pytest.fixture
+    def test_move_file_to_tmp(self, tmp_path, exploder, resume_dir):
+        # Move file to test update function (this should already exist to test if we are updating instead of delete)
+        branch = "companies/olivanders/achievements/predicting_spam_scrolls.yaml"
+        source_file = resume_dir / branch
+        destination_file = exploder.output_dir / branch
+        os.makedirs(os.path.dirname(destination_file), exist_ok=True)
+        shutil.copy(src=source_file, dst=destination_file)
+        assert destination_file.exists()
+
     def test_manifest_creation(self, manifest, exploder):
         assert manifest == exploder.manifest
 
-    def test_exploded_resume(self, resume_dir, exploder):
+    def test_exploded_resume(self, resume_dir, exploder, test_move_file_to_tmp):
         # load the resume
         exploder.explode()
         assert_dirs_equal(resume_dir, exploder.output_dir)

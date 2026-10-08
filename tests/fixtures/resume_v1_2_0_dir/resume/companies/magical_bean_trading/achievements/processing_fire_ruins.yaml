@@ -1,5 +1,3 @@
 company_id: magical_bean_trading
 id: processing_fire_ruins
-content: Modernized Spark cauldron ETL to process millions of FHIR-compliant patient
-  runes from large, distributed crystal datasets, achieving 50% improvement in processing
-  speed and mana efficiency
+content: Modernized Spark cauldron ETL to process millions of FHIR-compliant patient runes from large, distributed crystal datasets, achieving 50% improvement in processing speed and mana efficiency
