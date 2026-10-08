@@ -1,7 +1,4 @@
 company_id: olivanders
 id: predicting_spam_scrolls
-content: Trained an XGBoost familiar to label spam scrolls achieving 90% precision
-  on an extremely unbalanced dataset of ancient texts. The resulting magical guard
-  rails and risk model improvements blocked thousands of cursed scrolls
-key_achievement: Successfully deployed anti-curse protection for magical messaging
-  system
+content: Trained an XGBoost familiar to label spam scrolls achieving 90% precision on an extremely unbalanced dataset of ancient texts. The resulting magical guard rails and risk model improvements blocked thousands of cursed scrolls
+key_achievement: Successfully deployed anti-curse protection for magical messaging system

@@ -18,11 +18,27 @@
 
 ### Friction Analysis
 - [x] Port over template changes from Oura resume to `classic.tex`template #job-applications #user-research 📅 2026-08-19 ✅ 2026-08-24
-- [ ] Add new resume experience to pick from when completing a resume #job-applications #user-research 📅 2026-08-19
-- [ ] Find ways to get better advice on resume updates from Claude #job-applications #user-research 📅 2026-08-19
+- [x] Add new resume experience to pick from when completing a resume #job-applications #user-research 📅 2026-08-19 ✅ 2026-10-07
+- [x] Find ways to get better advice on resume updates from Claude #job-applications #user-research 📅 2026-08-19 ✅ 2026-10-07
 - [ ] Add education details to templates to show relevant experience #job-applications #user-research 📅 2026-08-24
 - [ ] More consistent parameter flags between different package call for smoother iterations #job-applications #user-research 📅 2026-08-24
 - [ ] Resume-builder does not build clean environment with PDF  #job-applications #user-research 📅 2026-08-24
+- [ ] Instead of nested repository build everything in flat directory #job-applications #user-research 📅 2026-09-01 
+- [ ] Make file should run the python-imploder function #job-applications #user-research 📅 2026-09-01 
+- [ ] Make file should set up local pyenv #job-applications #user-research 📅 2026-09-01 
+- [ ] Make file should transform job_posting to text file #job-applications #user-research 📅 2026-09-01 
+- [ ] Make file should have standardized output #job-applications #user-research 📅 2026-09-01 
+- [ ] Make file should make call to start application tracking #job-applications #user-research 📅 2026-09-01 
+- [ ] Function call to launch pdf for viewing
+- [ ] Edit and review resume flow could use less friction
+- [ ] YAML file edits reconstruct key achievements file what should not be amended
+- [ ] Job tracking should be surfaced directly to Obsidian files
+- [ ] Incorporate application clock in and clock out calls
+- [ ] Application status should be inferred from timestamp or null values (found, submitted, closed, interview)
+- [ ] Re-align all function calls to be standardized and default where it matters
+- [ ] Relocate the output of the pdf and resume.yaml
+- [ ] Clean up the pdf outputs pre-post call to make sure that not artifacts remain and recalls are not conflicting
+- [ ] Function call to launch the job-posting
 
 ### Drift fixes (resume content repo: /Users/rubicon/Development/resume)
 - [ ] Fix stale resume.json references -> resume.yaml in Makefile + README #cleanup

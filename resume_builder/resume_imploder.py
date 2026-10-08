@@ -200,7 +200,7 @@ class ResumeImploder:
         resume = self.implode()
         output_path = self.output
         with open(output_path, 'w', encoding='utf-8') as f:
-            yaml.dump(resume, f, sort_keys=False, allow_unicode=True)
+            yaml.dump(resume, f, sort_keys=False, allow_unicode=True, width=float('inf'))
 
 
 def main():

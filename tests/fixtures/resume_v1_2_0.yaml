@@ -8,15 +8,8 @@ contact_info:
   github: github.com/merlins-big-book-of-spells
 professional_summary:
   title: Professional Summary
-  content: 'Senior Data Wizard with 100+ years of wizarding experience building magical
-    data infrastructure at unicorn startups and dragon healthcare companies. Strong
-    background in cross-dimensional collaboration, translating complex spell-casting
-    insights into potion decisions and building foundational crystal ball infrastructure.
-    Proven track record of delivering measurable enchantment impact: millions of gold
-    coins in operational cost saved, 600M+ magical creatures catalogued, 15% improvement
-    in fortune-telling accuracy.'
-  tagline: Seeking senior-level opportunities in AI/ML sorcery and mystical product
-    analytics
+  content: Senior Data Wizard with 100+ years of wizarding experience building magical data infrastructure at unicorn startups and dragon healthcare companies. Strong background in cross-dimensional collaboration, translating complex spell-casting insights into potion decisions and building foundational crystal ball infrastructure. Proven track record of delivering measurable enchantment impact; millions of gold coins in operational cost saved, 600M+ magical creatures catalogued, 15% improvement in fortune-telling accuracy.
+  tagline: Seeking senior-level opportunities in AI/ML sorcery and mystical product analytics
 key_achievements:
   - company_id: olivanders
     achievement_id: deduplicate_magical_creatures
@@ -24,9 +17,6 @@ key_achievements:
   - company_id: olivanders
     achievement_id: migrating_spell_casting_events
     content: Successfully implemented realm wide solutions supporting 200+ data sorcerers
-  - company_id: olivanders
-    achievement_id: predicting_spam_scrolls
-    content: Successfully deployed anti-curse protection for magical messaging system
   - company_id: magical_bean_trading
     achievement_id: healthcare_potion_forecasting
     content: 15% improvement in fortune-telling accuracy
@@ -55,57 +45,37 @@ companies:
 achievements:
 - company_id: olivanders
   id: deduplicate_magical_creatures
-  content: Flagged, authored and implemented solution to deduplicate 600M magical
-    creature contacts, reducing contact duplication rates by 50%, significantly improving
-    experience for millions of spell-sellers
+  content: Flagged, authored and implemented solution to deduplicate 600M magical creature contacts, reducing contact duplication rates by 50%, significantly improving experience for millions of spell-sellers
 - company_id: olivanders
   id: crystal_ball_collections_feature
-  content: Provided ROI analysis and recommendations for the crystal ball collections
-    feature enabling hundreds of millions of additional scrying addresses resulting
-    in millions of gold coins in incremental marketing revenue for potion-sellers
+  content: Provided ROI analysis and recommendations for the crystal ball collections feature enabling hundreds of millions of additional scrying addresses resulting in millions of gold coins in incremental marketing revenue for potion-sellers
 - company_id: olivanders
   id: wizarding_infrastructure
-  content: Engineered PII compliant ETL infrastructure resolving wizard identities
-    between Spell App and Enchanted Rectangles datasets, unlocking billions of data
-    points for 200+ data sorcerers and accelerating top down magical initiatives
+  content: Engineered PII compliant ETL infrastructure resolving wizard identities between Spell App and Enchanted Rectangles datasets, unlocking billions of data points for 200+ data sorcerers and accelerating top down magical initiatives
 - company_id: olivanders
   id: migrating_spell_casting_events
-  content: Led data migration of billions of spell-casting events for dozens of data
-    wizards, establishing protocols that improved cross-team collaboration and reduced
-    data wizard overhead and compute time by 30%
+  content: Led data migration of billions of spell-casting events for dozens of data wizards, establishing protocols that improved cross-team collaboration and reduced data wizard overhead and compute time by 30%
 - company_id: olivanders
   id: predicting_spam_scrolls
-  content: Trained an XGBoost familiar to label spam scrolls achieving 90% precision
-    on an extremely unbalanced dataset of ancient texts. The resulting magical guard
-    rails and risk model improvements blocked thousands of cursed scrolls
+  content: Trained an XGBoost familiar to label spam scrolls achieving 90% precision on an extremely unbalanced dataset of ancient texts. The resulting magical guard rails and risk model improvements blocked thousands of cursed scrolls
 - company_id: magical_bean_trading
   id: healthcare_potion_forecasting
-  content: Improved healthcare potion forecasting accuracy by 15% through advanced
-    crystal engineering and novel elixir function development, directly contributing
-    to a deal with a leading dragon insurance provider
+  content: Improved healthcare potion forecasting accuracy by 15% through advanced crystal engineering and novel elixir function development, directly contributing to a deal with a leading dragon insurance provider
 - company_id: magical_bean_trading
   id: predicting_medical_ailment_cost
-  content: Developed and deployed deep learning familiars using TensorFlow for time-series
-    prediction of patient magical ailment costs, processing millions of electronic
-    health runes with complex temporal spell dependencies
+  content: Developed and deployed deep learning familiars using TensorFlow for time-series prediction of patient magical ailment costs, processing millions of electronic health runes with complex temporal spell dependencies
 - company_id: magical_bean_trading
   id: processing_fire_ruins
-  content: Modernized Spark cauldron ETL to process millions of FHIR-compliant patient
-    runes from large, distributed crystal datasets, achieving 50% improvement in processing
-    speed and mana efficiency
+  content: Modernized Spark cauldron ETL to process millions of FHIR-compliant patient runes from large, distributed crystal datasets, achieving 50% improvement in processing speed and mana efficiency
 - company_id: magical_bean_trading
   id: improved_metrics_for_high_council
-  content: Created familiar experimentation framework using a Python spell, which
-    accelerated development cycles and provided measurable performance metrics for
-    the High Council
+  content: Created familiar experimentation framework using a Python spell, which accelerated development cycles and provided measurable performance metrics for the High Council
 - company_id: stieg_and_sons
   id: grew_magic_beanstalk
-  content: Discovered, planted and mentored magical beanstalk. As a result, we were
-    able to steal 500+ pounds giant's gold and a golden goose for continue ROI
+  content: Discovered, planted and mentored magical beanstalk. As a result, we were able to steal 500+ pounds giant's gold and a golden goose for continue ROI
 - company_id: stieg_and_sons
   id: lumber_stock_management
-  content: Lumber acquisition and stock management, ensuring that local farmers and
-    builders have sufficient supply to house and feed the settlement
+  content: Lumber acquisition and stock management, ensuring that local farmers and builders have sufficient supply to house and feed the settlement
 education:
 - degree: Mage of Theoretical Dark Arts
   type: degree
@@ -124,17 +94,13 @@ education:
 hobbies:
 - title: WLAA Volunteer (Wizards with Learning Assistance Association)
   id: wlaa_volunteer
-  summary: Attending, supporting and volunteering for the local chapter of the Wizards
-    with Learning Assistance Association, helping fellow spellcasters with dyslexic
-    incantations
+  summary: Attending, supporting and volunteering for the local chapter of the Wizards with Learning Assistance Association, helping fellow spellcasters with dyslexic incantations
 - title: Retired Beater
   id: d1_beater
-  summary: Retired Quidditch beater trying to keep sharp on rainbow slopes in Unicorn
-    Valley and Dragon Ridge
+  summary: Retired Quidditch beater trying to keep sharp on rainbow slopes in Unicorn Valley and Dragon Ridge
 - title: '''Mystical Vibe'' Coding'
   id: vibe_coding
-  summary: Developed custom spells to track potions ingredient usage, track dragon
-    migration patterns, and divine stock investments using a crystal ball
+  summary: Developed custom spells to track potions ingredient usage, track dragon migration patterns, and divine stock investments using a crystal ball
 skills:
   technical:
     programming:

@@ -97,6 +97,9 @@ class Jinja2ResumeBuilder:
     
     def save_latex(self, content, output_path):
         """Save generated LaTeX content to file"""
+
+        output_path = Path(output_path) / 'resume.tex'
+
         try:
             with open(output_path, 'w', encoding='utf-8') as f:
                 f.write(content)
@@ -106,12 +109,18 @@ class Jinja2ResumeBuilder:
             logger.error(f"✗ Error saving LaTeX: {e}")
             return False
     
-    def compile_pdf(self, tex_file, pdf_file):
+    def compile_pdf(self, output_dir, tex_file=None):
         """Compile LaTeX to PDF using pdflatex"""
+
+        if not tex_file:
+            tex_file = output_dir / 'resume.tex'
+
+        pdf_file = output_dir / 'resume.pdf'
+
         try:
-            logger.info(f"📄 Compiling PDF: {pdf_file}")
+            logger.info(f"📄 Compiling PDF: {output_dir}")
             result = subprocess.run(
-                ['pdflatex', '-interaction=nonstopmode', f'-output-directory={pdf_file}', tex_file],
+                ['pdflatex', '-interaction=nonstopmode', f'-output-directory={output_dir}', tex_file],
                 capture_output=True, 
                 text=True, 
                 timeout=60
@@ -142,13 +151,24 @@ class Jinja2ResumeBuilder:
             logger.error(f"✗ PDF compilation error: {e}")
             return False
 
+    def cleanup_files(self, output, tex_file = False):
+
+        # remove pdf creation incidental files
+        for ext in ['.aux', '.log', '.out', '.synctex.gz']:
+            new_path = output.with_suffix(ext)
+            new_path.unlink(missing_ok=True)
+
+        # remove the tex file
+        if tex_file:
+            new_path = output.with_suffix('.tex')
+            new_path.unlink(missing_ok=True)
+
 def main():
     parser = argparse.ArgumentParser(description='Generate resume PDF using Jinja2 LaTeX templates')
     parser.add_argument('--template', default='green_side_bar.tex', help='Template file to use')
     parser.add_argument('--resume', help='Resume file')
-    parser.add_argument('--output', help='Output LaTeX file')
-    parser.add_argument('--pdf', help='Output PDF Directory')
-    parser.add_argument('--no-compile', action='store_true', help='Skip PDF compilation')
+    parser.add_argument('--output', help='Output directory')
+    parser.add_argument('--no-compile', action='store_false', help='Skip PDF compilation')
     
     args = parser.parse_args()
     
@@ -185,12 +205,11 @@ def main():
     
     # Compile PDF (optional)
     if not args.no_compile:
-        success = builder.compile_pdf(args.output, args.pdf)
+        success = builder.compile_pdf(args.output)
         if success:
             logger.info("🎉 Resume generation complete!")
             logger.info(f"📄 Generated files:")
             logger.info(f"   - {args.output} (LaTeX source)")
-            logger.info(f"   - {args.pdf} (PDF output)")
         else:
             logger.info(f"⚠️ PDF compilation failed, but LaTeX was created: {args.output}")
     else:

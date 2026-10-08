@@ -54,7 +54,20 @@ class ResumeExploder():
         full_path = self.output_dir / relative_path
         full_path.parent.mkdir(parents=True, exist_ok=True)
         with open(full_path, 'w', encoding='utf-8') as f:
-            yaml.dump(data, f, sort_keys=False, allow_unicode=True)
+            yaml.dump(data, f, sort_keys=False, allow_unicode=True, width=float('inf'))
+
+    def _update_yaml(self, relative_path: str, data: Any) -> None:
+        """Write `data` to a YAML file (relative to output_dir), creating dirs."""
+        full_path = self.output_dir / relative_path
+        if not full_path.exists():
+            self._write_yaml(relative_path, data)
+        else:
+            with open(full_path, 'r', encoding='utf-8') as f:
+                existing_data = yaml.load(f.read(), Loader=yaml.SafeLoader)
+            for k in existing_data:
+                if k not in data:
+                    data[k] = existing_data[k]
+            self._write_yaml(relative_path, data)
 
     def load_resume_data(self, file_path: str) -> Dict[str, Any]:
         """
@@ -90,8 +103,7 @@ class ResumeExploder():
 
     def setup_skills(self) -> None:
         for skillset in self.resume_data.get('skills', {}):
-            self._write_yaml(f"skills/{skillset}.yaml",
-                             self.resume_data['skills'][skillset])
+            self._write_yaml(f"skills/{skillset}.yaml", self.resume_data['skills'][skillset])
 
     def setup_companies(self) -> None:
 
@@ -100,14 +112,12 @@ class ResumeExploder():
 
         for company in self.resume_data.get('companies', []):
             company_id = company['id']
-            self._write_yaml(
-                f"companies/{company_id}/company_info.yaml", company)
+            self._write_yaml(f"companies/{company_id}/company_info.yaml", company)
             for achievement in self.resume_data.get('achievements', []):
                 if achievement['company_id'] == company_id:
                     if achievement['id'] in key_achievements:
                         achievement['key_achievement'] = key_achievements[achievement['id']]
-                    self._write_yaml(
-                        f"companies/{company_id}/achievements/{achievement['id']}.yaml",
+                    self._update_yaml(f"companies/{company_id}/achievements/{achievement['id']}.yaml",
                         achievement)
 
     def setup_education(self) -> None:
