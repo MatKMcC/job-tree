@@ -1,17 +1,20 @@
-# Resume Builder
-Using a standardized resume format to enable flexible resume updates and generation with LaTex and Jinja2 templates.
+# Job Tree
+A tool to manage a git based resume repository. This project implodes resumes into a readable format and builds them using templated latex files. Any job specific changes are exploded and pushed to preserve the application state and help evolve the resume over time.
 
 ## ;TLDR
-Creating a good resume with good content AND an aesthetically pleasing layout is difficult. This project attempts to simplify 
-this work needed by separating resume content and resume design. Using a standardized resume format (YAML)
-we can focus on resume content without worrying about resume design. After finalizing content we can choose a resume from the
-template library to see what existing design most fits job or personal requirements. Because templates are written in latex
-they can be easily modified and added to the resume library for future uses. 
+Typical resume formats (word documents) are in tension with resume requirements; flexibility to the job posting, traceability and ease of incorporating job specific in improvements into the **main** body of work. This project attempts to simplify this work by separating resume content and resume design and introducing a system to customize job-specific resumes and migrate improvements back into general or role specific resumes.
+
+1. Resume As A Git Repository
+Resume content is tracked in a file based git repository. This allows job specific edits, such as new achievements, skills and content rewording to be smoothly incorporated back into the **main** body of work. This also allows a simple tracking of applications via branches and the changeling and a corpus of work that is easily interpreted by LLMs. 
+3. Key Value Based Resume Format (YAML)
+A simple extendable resume structure that allows for component wise updates or improvements to a resume and programatic resume manipulations when updating, reading or tracking applications.
+5. Latex Templates For Resume Presentation
+Resume agnostic latex file(s) that can be easily applied to any resume with the correct YAML format. Making aesthetic updates persistent, config based changes that require minimal effort to apply. 
 
 ## Current Status
 - **Phase:** Application testing
-- **Progress:** Initial templating, resume generation, and end-to-end testing complete. Shared online and working on integration with my application process
-- **Target:** Project usage feedback by July 1st
+- **Progress:** Initial templating, resume generation, and end-to-end testing complete. Shared online and working on integration with my application process, command line beta
+- **Target:** Useable and shareable application that truly streamlines the application process
 
 ## Components
 - ✅ **YAML Resume Structure** - Structured resume data 
@@ -20,19 +23,21 @@ they can be easily modified and added to the resume library for future uses.
 - ✅ **Resume Versioning** - Structured resume data  (in progress)
 - ✅ **Template Versioning** - Structured resume data  (in progress)
 - ✅ **Additional Templates** - Structured resume data  (planned)
-- ⏳ **API Endpoints** - Automated job posting collection (planned)
-- ⏳ **CLI Endpoints** - Automated job posting collection (planned)
-- ⏳ **AI Optimization** - Standardized resume formats for AI optimization (future)
-- ⏳ **Cloud hosted** - Host a version in the cloud for api usage (future)
+- ⏳ **CLI Endpoints** - CLI workflow integration to quickly create an application (planned)
+- ⏳ **AI Optimization** - Canned prompts for simple and cheap suggestions to improve resumes for an application (future)
+- ⏳ **Application UI** - A resume UI that suggest and incorporates application specific  (future)
+- ⏳ **Job Status Tracking** - Aggregate information from application files to track job applications (future)
 
 ## Quick Start
 ```bash
-# Generate resume PDF from a resume.yaml file choosing the classic.tex template
-resume-builder --resume resume.yaml --template classic.tex --output resume.tex --pdf resume_pdf/
+# initialize a job from a new posting
+job-tree init --company XYZ --url 'XYZ.com/jobs-posting' --role 'astronaut'
+# Generate resume PDF from a resume repository
+job-tree build --template classic.tex
 ```
 
 ## Architecture
-- **Data:** YAML resume structure with metadata and versioning
+- **Data:** YAML resume structure with metadata and versioning and file based git repository
 - **Templates:** LaTeX templates with Jinja2 for customization
 - **Output:** PDF resumes via LaTeX compilation
 
