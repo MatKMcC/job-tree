@@ -41,18 +41,18 @@
 - [ ] Function call to launch the job-posting
 
 ### Drift fixes (resume content repo: /Users/rubicon/Development/resume)
-- [ ] Fix stale resume.json references -> resume.yaml in Makefile + README #cleanup
+- [x] Fix stale resume.json references -> resume.yaml in Makefile + README #cleanup
 
 ### Resume Compatibility
-- [ ] Functionality to update older resumes to new formats
+- [-] Functionality to update older resumes to new formats
 - [ ] Integrate resume into a UI
-- [ ] Add resume version control test to resumes #versioning 📅 2026-04-03 ✅ 2026-08-06
+- [x] Add resume version control test to resumes #versioning 📅 2026-04-03 ✅ 2026-08-06
 - [ ] Add Compatibility for educational details
 - [ ] Clarify resume metadata requirements and add test
 
 ### Usability
-- [ ] API service provided
-- [ ] CLI provided
+- [-] API service provided
+- [x] CLI provided
 
 ### Github Integration
 - [ ] Run test on github pushes
